@@ -44,10 +44,8 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mobile_security_project.MainActivity
-import com.example.mobile_security_project.ui.theme.MobilesecurityprojectTheme
+import com.example.mobile_security_project.ChuckNorrisActivity
 
 @Composable
 fun LoginForm(){
@@ -59,7 +57,9 @@ fun LoginForm(){
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize().padding(horizontal = 30.dp)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 30.dp)
         ) {
             LoginField(
                 value = credentials.login,
@@ -101,7 +101,7 @@ data class Credentials(
 
 fun checkCredentials(creds: Credentials, context: Context): Boolean {
     if (creds.isNotEmpty() && creds.login == "admin") {
-        context.startActivity(Intent(context, MainActivity::class.java))
+        context.startActivity(Intent(context, ChuckNorrisActivity::class.java))
         (context as Activity).finish()
         return true
     } else {
@@ -217,19 +217,19 @@ fun PasswordField(
         visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation()
     )
 }
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun GreetingPreview() {
-    MobilesecurityprojectTheme {
-        LoginForm()
-    }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun GreetingPreviewDark() {
-    MobilesecurityprojectTheme(darkTheme = true) {
-        LoginForm()
-    }
-}
+//
+//@Preview(showBackground = true, showSystemUi = true)
+//@Composable
+//fun GreetingPreview() {
+//    MobilesecurityprojectTheme {
+//        LoginForm()
+//    }
+//}
+//
+//@Preview(showBackground = true, showSystemUi = true)
+//@Composable
+//fun GreetingPreviewDark() {
+//    MobilesecurityprojectTheme(darkTheme = true) {
+//        LoginForm(navController = NavController())
+//    }
+//}
