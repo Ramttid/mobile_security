@@ -217,19 +217,3 @@ fun PasswordField(
         visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation()
     )
 }
-//
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun GreetingPreview() {
-//    MobilesecurityprojectTheme {
-//        LoginForm()
-//    }
-//}
-//
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun GreetingPreviewDark() {
-//    MobilesecurityprojectTheme(darkTheme = true) {
-//        LoginForm(navController = NavController())
-//    }
-//}
